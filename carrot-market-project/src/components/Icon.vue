@@ -2,7 +2,7 @@
   <div
     :class="`icon ${props.cover ? 'ui-bg-img' : 'ui-bg-img-contain'}`"
     :style="{
-      backgroundImage: 'url(' + require(`@/assets/images/${props.src}.png`) + ')',
+      backgroundImage: 'url(' + require(`@/assets/images/${props.src}.svg`) + ')',
       width: props.width,
       height: props.height,
     }"

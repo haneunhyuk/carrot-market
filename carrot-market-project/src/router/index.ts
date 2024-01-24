@@ -14,9 +14,19 @@ const routes: Array<RouteRecordRaw> = [
   //   component: () => import('../views/AboutView.vue')
   // },
   {
-    path: '/test',
+    path: '/popup',
     component: TestView
-  }
+  },
+  {
+    path: '/header',
+    name: 'header',
+    component: () => import('../components/Header.vue')
+  },
+  {
+    path: '/bottom-nav',
+    name: 'bottom-nav',
+    component: () => import('../components/BottomNav.vue')
+  },
 ]
 
 const router = createRouter({

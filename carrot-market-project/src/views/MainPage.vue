@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import TheHeader from './../components/Header.vue';
+import TheHeader from './../components/HeaderComponent.vue';
 import BottomNav from '@/components/BottomNav.vue';
 
 interface user {

@@ -1,35 +1,30 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import TestView from '@/views/TestView.vue'
+import HomePage from '../views/HomePage.vue'
+import LifePage from '../views/LifePage.vue'
+import NearPage from '../views/NearPage.vue'
+import ChatPage from '../views/ChatPage.vue'
+import MyPage from '../views/MyPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/home',
-    name: 'home',
-    component: HomeView
-  },
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   component: () => import('../views/AboutView.vue')
-  // },
-  {
-    path: '/popup',
-    component: TestView
+    path: '/',
+    component: HomePage
   },
   {
-    path: '/header',
-    name: 'header',
-    component: () => import('../components/HeaderComponent.vue')
+    path: '/life',
+    component: LifePage
   },
   {
-    path: '/bottom-nav',
-    name: 'bottom-nav',
-    component: () => import('../components/BottomNav.vue')
+    path: '/near',
+    component: NearPage
   },
   {
-    path: '/main-page',
-    component: () => import('../views/MainPage.vue')
+    path: '/chat',
+    component: ChatPage
+  },
+  {
+    path: '/mypage',
+    component: MyPage
   },
 ]
 

@@ -7,17 +7,20 @@
       <button type="button">중구</button>
     </div>
     <div class="icon-wrap">
-      <button type="button">
+      <button type="button" v-show="props.path=='life'">
         <IconComponent src="ic_profile" width="24px" height="24px" :cover="false" />
       </button>
-      <button type="button">
+      <button type="button" v-show="props.path=='' || props.path=='life' || props.path=='near'">
         <IconComponent src="ic_search" width="24px" height="24px" :cover="false" />
       </button>
-      <button type="button">
+      <button type="button" v-show="props.path=='chat'">
         <IconComponent src="ic_QRscan" width="24px" height="24px" :cover="false" />
       </button>
-      <button type="button">
+      <button type="button" v-show="props.path !== 'mypage'">
         <IconComponent src="ic_alarm" width="24px" height="24px" :cover="false" />
+      </button>
+      <button type="button" v-show="props.path=='mypage'">
+        <IconComponent src="ic_setting" width="24px" height="24px" :cover="false" />
       </button>
     </div>
   </div>
@@ -32,6 +35,7 @@ import ToastPopup from './ToastPopup.vue';
 const props = defineProps({
   hasSelectBtn : String,
   location:String,
+  path:String
 })
 
 const active = ref(false);
@@ -79,7 +83,7 @@ const ToggleSelect = () => active.value = !active.value;
   }
   .icon-wrap {
     display: flex;
-    .icon {
+    button {
       margin-left: 1.5rem;
     }
   }

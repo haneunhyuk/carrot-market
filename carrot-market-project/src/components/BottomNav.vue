@@ -1,26 +1,26 @@
 <template>
   <div class="ui-navBottom">
-    <router-link to="" class="ui-navBottom-btn">
+    <router-link to="/" class="ui-navBottom-btn" :active-class="'active'">
       <IconComponent src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">홈</span>
     </router-link>
 
-    <router-link to="" class="ui-navBottom-btn">
+    <router-link to="/life" class="ui-navBottom-btn">
       <IconComponent src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">동네생활</span>
     </router-link>
 
-    <router-link to="" class="ui-navBottom-btn">
+    <router-link to="/near" class="ui-navBottom-btn">
       <IconComponent src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">내 근처</span>
     </router-link>
 
-    <router-link to="" class="ui-navBottom-btn">
+    <router-link to="/chat" class="ui-navBottom-btn">
       <IconComponent src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">채팅</span>
     </router-link>
 
-    <router-link to="" class="ui-navBottom-btn">
+    <router-link to="/mypage" class="ui-navBottom-btn">
       <IconComponent src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">나의 당근</span>
     </router-link>
@@ -29,7 +29,6 @@
 
 <script setup lang="ts">
 import IconComponent from './IconComponent.vue';
-
 </script>
 
 <style lang="scss">
@@ -53,6 +52,12 @@ import IconComponent from './IconComponent.vue';
     justify-content: center;
     align-items: center;
     position: relative;
+    opacity: 0.5;
+
+    &.active {
+      opacity: 1;
+    }
+
     .text {
       margin-top: 0.6rem;
       font-size: 1.2rem;

@@ -2,6 +2,7 @@
   <!-- :location="userLocation[0].name" -->
   <header-component
       has-select-btn="true"
+      :path="path"
     >
     </header-component>
     <div class="container">
@@ -19,18 +20,15 @@ import { computed, ref, watch } from 'vue';
 
 const route = useRoute();
 
-// 현재 경로를 저장하는 ref 변수
 const currentPath = ref(route.path),
       path = ref()
-// watch를 사용하여 라우트 변경 감지
+      
 watch(() => {
   currentPath.value = route.path;
   const currentPagePath = currentPath.value.split('/');
-//  console.log(currentPagePath[currentPagePath.length-1]);
+  // console.log(currentPagePath[currentPagePath.length-1]);
   path.value = currentPagePath[currentPagePath.length-1]
 });
-
-
 
 const handleRoute = (path: string) => {
   console.log(path)

@@ -1,3 +1,9 @@
+import HomePage from '@/views/HomePage.vue'
+import LifePage from '@/views/LifePage.vue'
+import NearPage from '@/views/NearPage.vue'
+import ChatPage from '@/views/ChatPage.vue'
+import MyPage from '@/views/MyPage.vue'
+
 export interface listInterface {
     title: string,
     subjects: string[]
@@ -10,6 +16,7 @@ export interface toastInterface {
 export interface baseInterface {
     title: string,
     path: string,
+    component: any,
     header: string[],
 }
 
@@ -34,32 +41,32 @@ const baseData: baseInterface[] = [
     {
         title: '홈',
         path: '/',
-        // component: () => import(),
+        component: HomePage,
         header: ['search','alarm']
     },
     {
         title: '동네생활',
         path: '/life',
-        // component: () => import(),
+        component: LifePage,
         header: ['profile','search','alarm']
     },
     {
         title: '내 근처',
         path: '/near',
-        // component: () => import(),
+        component: NearPage,
         header: ['search','alarm']
     },
     {
         title: '채팅',
         path: '/chat',
-        // component: () => import(),
+        component: ChatPage,
         header: ['QRscan','alarm']
 
     },
     {
         title: '나의 당근',
         path: '/mypage',
-        // component: () => import(),
+        component: MyPage,
         header: ['setting']
     },
 ]
@@ -71,4 +78,4 @@ const listsToast: toastInterface = {
     ]
 }
 
-export { listsBottomSheet, listsToast }
+export { listsBottomSheet, listsToast, baseData }

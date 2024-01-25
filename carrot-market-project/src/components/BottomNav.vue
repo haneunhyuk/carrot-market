@@ -1,34 +1,34 @@
 <template>
   <div class="ui-navBottom">
     <router-link to="" class="ui-navBottom-btn">
-      <Icon src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
+      <IconComponent src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">홈</span>
     </router-link>
 
     <router-link to="" class="ui-navBottom-btn">
-      <Icon src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
+      <IconComponent src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">동네생활</span>
     </router-link>
 
     <router-link to="" class="ui-navBottom-btn">
-      <Icon src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
+      <IconComponent src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">내 근처</span>
     </router-link>
 
     <router-link to="" class="ui-navBottom-btn">
-      <Icon src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
+      <IconComponent src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">채팅</span>
     </router-link>
 
     <router-link to="" class="ui-navBottom-btn">
-      <Icon src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
+      <IconComponent src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">나의 당근</span>
     </router-link>
   </div>
 </template>
 
 <script setup lang="ts">
-import Icon from './Icon.vue';
+import IconComponent from './IconComponent.vue';
 
 </script>
 

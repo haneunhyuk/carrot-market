@@ -1,25 +1,23 @@
 <template>
   <div class="header">
     <div v-if="hasSelectBtn" class="header-tit select-location">
-      <button type="button" @click="ToggleSelect">
-        {{ props.location }}
-        <span class="select-icon" :class="active?'flip':''">
-          <Icon src="ic_arrow" width="24px" height="24px" :cover="false"></Icon>
-        </span>
-      </button>
+      <ToastPopup :lists="listsToast" />
     </div>
     <div v-else class="header-tit">
       <button type="button">중구</button>
     </div>
     <div class="icon-wrap">
       <button type="button">
-        <Icon src="ic_profile" width="24px" height="24px" :cover="false" />
+        <IconComponent src="ic_profile" width="24px" height="24px" :cover="false" />
       </button>
       <button type="button">
-        <Icon src="ic_search" width="24px" height="24px" :cover="false" />
+        <IconComponent src="ic_search" width="24px" height="24px" :cover="false" />
       </button>
       <button type="button">
-        <Icon src="ic_alarm" width="24px" height="24px" :cover="false" />
+        <IconComponent src="ic_QRscan" width="24px" height="24px" :cover="false" />
+      </button>
+      <button type="button">
+        <IconComponent src="ic_alarm" width="24px" height="24px" :cover="false" />
       </button>
     </div>
   </div>
@@ -27,7 +25,9 @@
 
 <script setup lang="ts">
 import { defineProps, ref } from 'vue';
-import Icon from './Icon.vue';
+import IconComponent from './IconComponent.vue';
+import { listsBottomSheet, listsToast } from '@/datas/datas'
+import ToastPopup from './ToastPopup.vue';
 
 const props = defineProps({
   hasSelectBtn : String,
@@ -45,6 +45,10 @@ const ToggleSelect = () => active.value = !active.value;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: 4rem;
   padding: 0 1.5rem;
   .header-tit {

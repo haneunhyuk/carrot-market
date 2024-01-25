@@ -33,6 +33,9 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
+.icon {
+  filter: invert(1);
+}
 .ui-bg-img {
   background-repeat: no-repeat;
   background-position: 0 0;

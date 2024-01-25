@@ -3,7 +3,11 @@ export interface listInterface {
     subjects: string[]
 }
 
-const lists: listInterface = {
+export interface toastInterface {
+    location: object[]
+}
+
+const listsBottomSheet: listInterface = {
     title: '게시글의 주제를 선택해주세요.',
     subjects: [
         '동네질문',
@@ -20,4 +24,11 @@ const lists: listInterface = {
     ]
 }
 
-export { lists }
+const listsToast: toastInterface = {
+    location: [
+        {title: '명동', select: true},
+        {title: '회현', select: false}
+    ]
+}
+
+export { listsBottomSheet, listsToast }

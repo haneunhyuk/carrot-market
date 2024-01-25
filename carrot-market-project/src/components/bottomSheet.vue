@@ -21,7 +21,7 @@ const props = defineProps<{
                 </li>
             </ul>
         </div>
-        <div class="bg"></div>
+        <div class="bg" @click="() => {emits('closePopup')}"></div>
     </div>
 </template>
 

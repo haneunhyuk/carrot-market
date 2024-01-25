@@ -20,7 +20,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/header',
     name: 'header',
-    component: () => import('../components/Header.vue')
+    component: () => import('../components/HeaderComponent.vue')
   },
   {
     path: '/bottom-nav',

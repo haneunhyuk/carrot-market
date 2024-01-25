@@ -1,6 +1,6 @@
 <template>
   <div class="ui-navBottom">
-    <router-link to="/" class="ui-navBottom-btn" :active-class="'active'">
+    <!-- <router-link to="/" class="ui-navBottom-btn" :active-class="'active'">
       <IconComponent src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">홈</span>
     </router-link>
@@ -23,12 +23,18 @@
     <router-link to="/mypage" class="ui-navBottom-btn">
       <IconComponent src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">나의 당근</span>
+    </router-link> -->
+    <router-link v-for="data in baseData" :key="data.title" :to="data.path" class="ui-navBottom-btn" :active-class="'active'">
+      <IconComponent :src="`bottom_nav/ic_home`" width="24px" height="24px" :cover="false" />
+      <span class="text">{{ data.title }}</span>
     </router-link>
   </div>
 </template>
 
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
 import IconComponent from './IconComponent.vue';
+import { baseData } from '@/datas/datas'
 </script>
 
 <style lang="scss">

@@ -7,7 +7,7 @@
       <button type="button">중구</button>
     </div>
     <div class="icon-wrap">
-      <button type="button" v-show="props.path=='life'">
+      <!-- <button type="button" v-show="props.path=='life'">
         <IconComponent src="ic_profile" width="24px" height="24px" :cover="false" />
       </button>
       <button type="button" v-show="props.path=='' || props.path=='life' || props.path=='near'">
@@ -21,15 +21,18 @@
       </button>
       <button type="button" v-show="props.path=='mypage'">
         <IconComponent src="ic_setting" width="24px" height="24px" :cover="false" />
+      </button> -->
+      <button v-for="icon in activeData[0].header" :key="icon" type="button">
+        <IconComponent :src="`ic_${icon}`" width="24px" height="24px" :cover="false" />
       </button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref } from 'vue';
+import { defineProps, ref, watch } from 'vue';
 import IconComponent from './IconComponent.vue';
-import { listsBottomSheet, listsToast } from '@/datas/datas'
+import { listsBottomSheet, listsToast,  baseData } from '@/datas/datas'
 import ToastPopup from './ToastPopup.vue';
 
 const props = defineProps({
@@ -38,7 +41,12 @@ const props = defineProps({
   path:String
 })
 
-const active = ref(false);
+const active = ref(false),
+      activeData = ref()
+
+watch(() => {
+  activeData.value = baseData.filter((data: any) => data.path.replace('/','') == props.path)
+})
 
 const ToggleSelect = () => active.value = !active.value;
 

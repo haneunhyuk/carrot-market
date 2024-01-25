@@ -44,7 +44,7 @@ import IconComponent from './IconComponent.vue';
   height: 7rem;
   margin: auto;
   border-top: 1px solid #eee;
-  z-index: 9999;
+  z-index: 999;
 
   .ui-navBottom-btn {
     flex: 1;

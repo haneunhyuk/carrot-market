@@ -34,7 +34,7 @@ const props = defineProps<{
     display: flex;
     flex-direction: column;
     position: fixed;
-    z-index: 10;
+    z-index: 1000;
     top: 100%;
     left: 0;
     width: 100%;

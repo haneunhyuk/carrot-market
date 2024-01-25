@@ -36,7 +36,7 @@ const props = defineProps<{
 }
 
 .popup.open {
-    z-index: 20;
+    z-index: 1001;
 }
 
 .popup.open .popup-content {

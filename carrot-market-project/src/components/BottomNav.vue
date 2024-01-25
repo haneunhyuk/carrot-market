@@ -1,29 +1,29 @@
 <template>
   <div class="ui-navBottom">
-    <div class="ui-navBottom-btn">
+    <router-link to="" class="ui-navBottom-btn">
       <Icon src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">홈</span>
-    </div>
+    </router-link>
 
-    <div class="ui-navBottom-btn">
+    <router-link to="" class="ui-navBottom-btn">
       <Icon src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">동네생활</span>
-    </div>
+    </router-link>
 
-    <div class="ui-navBottom-btn">
+    <router-link to="" class="ui-navBottom-btn">
       <Icon src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">내 근처</span>
-    </div>
+    </router-link>
 
-    <div class="ui-navBottom-btn">
+    <router-link to="" class="ui-navBottom-btn">
       <Icon src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">채팅</span>
-    </div>
+    </router-link>
 
-    <div class="ui-navBottom-btn">
+    <router-link to="" class="ui-navBottom-btn">
       <Icon src="bottom_nav/ic_home" width="24px" height="24px" :cover="false" />
       <span class="text">나의 당근</span>
-    </div>
+    </router-link>
   </div>
 </template>
 
@@ -43,8 +43,7 @@ import Icon from './Icon.vue';
   width: 100%;
   height: 7rem;
   margin: auto;
-  background-color: #fbfbfb;
-  box-shadow: 0 0 15px rgba(152, 152, 152, 0.5);
+  border-top: 1px solid #eee;
   z-index: 9999;
 
   .ui-navBottom-btn {
@@ -55,9 +54,9 @@ import Icon from './Icon.vue';
     align-items: center;
     position: relative;
     .text {
-      margin-top: 1rem;
+      margin-top: 0.6rem;
       font-size: 1.2rem;
-      color: #5A5A5A;
+      color: white;
     }
   }
 }

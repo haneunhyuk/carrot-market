@@ -27,6 +27,10 @@ const routes: Array<RouteRecordRaw> = [
     name: 'bottom-nav',
     component: () => import('../components/BottomNav.vue')
   },
+  {
+    path: '/main-page',
+    component: () => import('../views/MainPage.vue')
+  },
 ]
 
 const router = createRouter({

@@ -1,5 +1,5 @@
 <template>
-  <FilterComponont :path="baseData[0].path" :data="activeData[0]"></FilterComponont>
+  <FilterComponont :data="activeData[0]"></FilterComponont>
   <ListContent  v-for="cont in activeData[0].content" :key="cont.title" :content="cont" />
 </template>
 

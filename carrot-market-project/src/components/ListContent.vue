@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { Fragment, defineProps } from 'vue';
 const props = defineProps<{
     content: {
         hasMore?: boolean
@@ -18,28 +18,28 @@ console.log(props.content)
 </script>
 
 <template>
-    <div class="content">
-        <div v-if="content.img" class="img-wrap">
-            <!-- <img :src="`@/images/img_${content.img}.png`"> -->
-            <img :src="require(`@/assets/images/img_${content.img}.png`)" >
-        </div>
-        <div class="content-wrap">
-            <h2 class="title">{{ content.title }}</h2>
-            <div class="subTxt">
-                <template v-for="(item, key) of content.subTxt" :key="item">
-                    <span v-if="key !== 'price'">{{ item }}</span>
-                    <div v-else>{{ item?.toLocaleString() }}원</div>
-                </template>
-                <!-- <span v-for="item in content.subTxt" :key="item">{{ item }}</span> -->
-            </div>
-        </div>
-        <div v-if="content.hasMore" class="more">
-            더보기
+    <!-- <div class="content"> -->
+    <div v-if="content.img" class="img-wrap">
+        <!-- <img :src="`@/images/img_${content.img}.png`"> -->
+        <img :src="require(`@/assets/images/img_${content.img}.png`)" >
+    </div>
+    <div class="content-wrap">
+        <h2 class="title">{{ content.title }}</h2>
+        <div class="subTxt">
+            <template v-for="(item, key) of content.subTxt" :key="item">
+                <span v-if="key !== 'price'">{{ item }}</span>
+                <div v-else>{{ item?.toLocaleString() }}원</div>
+            </template>
+            <!-- <span v-for="item in content.subTxt" :key="item">{{ item }}</span> -->
         </div>
     </div>
+    <div v-if="content.hasMore" class="more">
+        더보기
+    </div>
+    <!-- </div> -->
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .content {
     position: relative;
     display: flex;

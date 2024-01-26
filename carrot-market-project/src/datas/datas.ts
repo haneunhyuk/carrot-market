@@ -18,6 +18,9 @@ export interface baseInterface {
     path: string,
     component: any,
     header: string[],
+    categoryBtnType? : string,
+    categoryTxt?: string,
+    category?: any[],
     content: any[]
 }
 
@@ -44,6 +47,19 @@ const baseData: baseInterface[] = [
         path: '/',
         component: HomePage,
         header: ['search','alarm'],
+        category: [
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'home',txt:'부동산'},
+            {src:'car',txt:'중고차'},
+        ],
         content: [
             {
                 hasMore: true,
@@ -90,6 +106,21 @@ const baseData: baseInterface[] = [
         path: '/life',
         component: LifePage,
         header: ['profile','search','alarm'],
+        categoryBtnType: 'round',
+        categoryTxt: '주제',
+        category: [
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'part-timer',txt:'알바'},
+            {src:'home',txt:'부동산'},
+            {src:'car',txt:'중고차'},
+        ],
         content: []
     },
     {
@@ -112,6 +143,21 @@ const baseData: baseInterface[] = [
         path: '/mypage',
         component: MyPage,
         header: ['setting'],
+        categoryBtnType: 'round',
+        categoryTxt: '전체',
+        category: [
+            {txt:'알바'},
+            {txt:'알바'},
+            {txt:'알바'},
+            {txt:'알바'},
+            {txt:'알바'},
+            {txt:'알바'},
+            {txt:'알바'},
+            {txt:'알바'},
+            {txt:'알바'},
+            {txt:'부동산'},
+            {txt:'중고차'},
+        ],
         content: []
     },
 ]

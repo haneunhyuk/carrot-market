@@ -6,9 +6,8 @@
     >
     </header-component>
     <div class="container">
-      <router-view/>
+      <router-view :path="path"/>
     </div>
-    <button type="button" class="btn-write" @click="handleRoute(path)">글쓰기</button>
     <bottom-nav></bottom-nav>
 </template>
 
@@ -29,10 +28,6 @@ watch(() => {
   // console.log(currentPagePath[currentPagePath.length-1]);
   path.value = currentPagePath[currentPagePath.length-1]
 });
-
-const handleRoute = (path: string) => {
-  console.log(path)
-}
 </script>
 
 <style lang="scss" >

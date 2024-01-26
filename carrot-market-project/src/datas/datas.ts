@@ -18,6 +18,7 @@ export interface baseInterface {
     path: string,
     component: any,
     header: string[],
+    content: any[]
 }
 
 const listsBottomSheet: listInterface = {
@@ -42,32 +43,76 @@ const baseData: baseInterface[] = [
         title: '홈',
         path: '/',
         component: HomePage,
-        header: ['search','alarm']
+        header: ['search','alarm'],
+        content: [
+            {
+                hasMore: true,
+                img: 'test',
+                title: '테스트1',
+                subTxt: {
+                    locale: '명동',
+                    time: '11분 전',
+                    price: 10000
+                }
+            },
+            {
+                img: 'test',
+                title: '테스트2',
+                subTxt: {
+                    locale: '명동',
+                    time: '3시간 전',
+                    price: 3000
+                }
+            },
+            {
+                img: 'test',
+                title: '테스트3',
+                subTxt: {
+                    locale: '종로',
+                    time: '41분 전',
+                    price: 1420000
+                }
+            },
+            {
+                img: 'test',
+                title: '테스트4',
+                subTxt: {
+                    locale: '회현',
+                    time: '10시간 전',
+                    price: 500
+                }
+            },
+
+        ]
     },
     {
         title: '동네생활',
         path: '/life',
         component: LifePage,
-        header: ['profile','search','alarm']
+        header: ['profile','search','alarm'],
+        content: []
     },
     {
         title: '내 근처',
         path: '/near',
         component: NearPage,
-        header: ['search','alarm']
+        header: ['search','alarm'],
+        content: []
     },
     {
         title: '채팅',
         path: '/chat',
         component: ChatPage,
-        header: ['QRscan','alarm']
+        header: ['QRscan','alarm'],
+        content: []
 
     },
     {
         title: '나의 당근',
         path: '/mypage',
         component: MyPage,
-        header: ['setting']
+        header: ['setting'],
+        content: []
     },
 ]
 

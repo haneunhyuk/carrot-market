@@ -27,11 +27,15 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .filter-area {
+  margin: 1rem 0;
   .filter-list {
     overflow: scroll;
     display: flex;
     padding: 0 1.5rem;
     gap: 0.8rem;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     
     li {
       display: flex;
@@ -79,4 +83,5 @@ const props = defineProps({
     }
   }
 }
+
 </style>

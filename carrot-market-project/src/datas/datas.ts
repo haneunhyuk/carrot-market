@@ -76,8 +76,6 @@ const baseData: baseInterface[] = [
                     locale: '명동',
                     time: '11분 전',
                     price: 10000,
-                },
-                react: {
                     like: 5
                 }
             },
@@ -88,8 +86,6 @@ const baseData: baseInterface[] = [
                     locale: '명동',
                     time: '3시간 전',
                     price: 0,
-                },
-                react: {
                     like: 11
                 }
             },
@@ -100,8 +96,6 @@ const baseData: baseInterface[] = [
                     locale: '종로',
                     time: '41분 전',
                     price: 1420000,
-                },
-                react: {
                 }
             },
             {
@@ -111,8 +105,6 @@ const baseData: baseInterface[] = [
                     locale: '회현',
                     time: '10시간 전',
                     price: 500,
-                },
-                react: {   
                     like: 2
                 }
             },
@@ -123,8 +115,6 @@ const baseData: baseInterface[] = [
                     locale: '회현',
                     time: '10시간 전',
                     price: 500,
-                },
-                react: {   
                     like: 2
                 }
             },
@@ -135,8 +125,6 @@ const baseData: baseInterface[] = [
                     locale: '회현',
                     time: '10시간 전',
                     price: 500,
-                },
-                react: {   
                     like: 2
                 }
             },
@@ -147,8 +135,6 @@ const baseData: baseInterface[] = [
                     locale: '회현',
                     time: '10시간 전',
                     price: 500,
-                },
-                react: {   
                     like: 2
                 }
             },
@@ -159,8 +145,6 @@ const baseData: baseInterface[] = [
                     locale: '회현',
                     time: '10시간 전',
                     price: 500,
-                },
-                react: {   
                     like: 2
                 }
             },
@@ -191,102 +175,7 @@ const baseData: baseInterface[] = [
                 {src:'car',txt:'중고차'},
             ]
         },
-        content: [
-            {
-                more: false,
-                title: '테스트1',
-                subTxt: {
-                    locale: '명동',
-                    time: '11분 전',
-                    watch: 48,
-                },
-                react: {
-                    thumb: 5,
-                    comment: 1
-                }
-            },
-            {
-                more: false,
-                title: '테스트2',
-                subTxt: {
-                    locale: '명동',
-                    time: '3시간 전',
-                    watch: 1,
-                },
-                react: {
-                    thumb: 11
-                }
-            },
-            {
-                more: false,
-                title: '테스트3',
-                subTxt: {
-                    locale: '종로',
-                    time: '41분 전',
-                }
-            },
-            {
-                more: false,
-                title: '테스트4',
-                subTxt: {
-                    locale: '회현',
-                    time: '10시간 전',
-                    watch: 5
-                },
-                react: {
-                    person: 6
-                }
-            },
-            {
-                more: false,
-                title: '테스트4',
-                subTxt: {
-                    locale: '회현',
-                    time: '10시간 전',
-                    watch: 3,
-                },
-                react: {
-                    thumb: 2,
-                    comment: 5,
-                }
-            },
-            {
-                more: false,
-                title: '테스트4',
-                subTxt: {
-                    locale: '회현',
-                    time: '10시간 전',
-                    watch: 22,
-                },
-                react: {
-                    thumb: 2
-                }
-            },
-            {
-                more: false,
-                title: '테스트4',
-                subTxt: {
-                    locale: '회현',
-                    time: '10시간 전',
-                    watch: 15,
-                },
-                react: {
-                    thumb: 2
-                }
-            },
-            {
-                more: false,
-                title: '테스트4',
-                subTxt: {
-                    locale: '회현',
-                    time: '10시간 전',
-                },
-                react: {
-                    thumb: 2
-                }
-            },
-
-        ]
+        content: []
     },
     {
         title: '내 근처',

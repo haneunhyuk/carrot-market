@@ -1,7 +1,6 @@
 <template>
   <div>
-    <FilterComponont :data="activeData[0]" :btn-type="activeData[0].categoryBtnType" :whole-txt="activeData[0].categoryTxt"></FilterComponont>
-    life
+    <FilterComponont :data="activeData[0]"></FilterComponont>
   </div>
 </template>
 

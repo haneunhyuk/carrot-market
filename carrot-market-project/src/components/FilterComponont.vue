@@ -1,12 +1,10 @@
 <template>
   <div class="filter-area">
-    <ul class="filter-list" :class="`${btnType}-btn`">
-      <li>
-        <button type="button" class="all-btn"><IconComponent src="ic_hamburger" width="18px" height="18px" :cover="false"></IconComponent><span v-if="wholeTxt" class="all-btn-txt">{{ wholeTxt }}</span></button>
-      </li>
-      <li v-for="category in data.category" :key="category.txt">
-        <button type="button">
-          <IconComponent v-if="category.src" :src="`ic_${category.src}`" width="14px" height="14px" :cover="false"></IconComponent>
+    <ul class="filter-list" :class="{'round-btn': data?.category.round, 'big': data?.category.big}">
+      <li v-for="category in data?.category.cont" :key="category.txt">
+        <button type="button" :class="{'all-btn': category.all}">
+          <IconComponent v-if="category.all" :src="`ic_${category.src}`" width="18px" height="18px" :cover="false"><span class="all-btn-txt">전체</span></IconComponent>
+          <IconComponent v-else-if="category.src" :src="`ic_${category.src}`" width="14px" height="14px" :cover="false"></IconComponent>
           <span class="category-txt">{{ category.txt }}</span>
         </button>
       </li>
@@ -19,9 +17,7 @@ import IconComponent from './IconComponent.vue';
 import { defineProps } from 'vue';
 
 const props = defineProps({
-  wholeTxt : String,
   data: Array,
-  btnType: String,
 })
 </script>
 
@@ -74,11 +70,11 @@ const props = defineProps({
         border-radius: 5rem;
         background-color: transparent;
       }
-      &.big {
-        li {
-          padding: 1.2rem 1.6rem;
-          font-size: 1.6rem;
-        }
+    }
+    &.big {
+      li {
+        padding: 1.2rem 1.6rem;
+        font-size: 1.6rem;
       }
     }
   }

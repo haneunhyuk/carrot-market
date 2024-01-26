@@ -78,7 +78,7 @@ const baseData: baseInterface[] = [
                     price: 10000,
                 },
                 react: {
-                    like: 5
+                    like: 6
                 }
             },
             {

@@ -60,9 +60,11 @@ const ToggleSelect = () => active.value = !active.value;
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 1;
   width: 100%;
   height: 4rem;
   padding: 0 1.5rem;
+  background-color: #1d1f22;
   .header-tit {
     button {
       font-size: 2rem;

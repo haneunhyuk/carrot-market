@@ -20,7 +20,11 @@ export interface baseInterface {
     header: string[],
     categoryBtnType? : string,
     categoryTxt?: string,
-    category?: any[],
+    category?: {
+        round?: boolean,
+        big?: boolean,
+        cont: Array<object>
+    },
     content: any[]
 }
 
@@ -47,28 +51,32 @@ const baseData: baseInterface[] = [
         path: '/',
         component: HomePage,
         header: ['search','alarm'],
-        category: [
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'home',txt:'부동산'},
-            {src:'car',txt:'중고차'},
-        ],
+        category: {
+            cont: [
+                {src:'hamburger', all: true},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'home',txt:'부동산'},
+                {src:'car',txt:'중고차'},
+            ]
+        },
         content: [
             {
-                hasMore: true,
+                more: false,
                 img: 'test',
                 title: '테스트1',
                 subTxt: {
                     locale: '명동',
                     time: '11분 전',
-                    price: 10000
+                    price: 10000,
+                    like: 5
                 }
             },
             {
@@ -77,7 +85,8 @@ const baseData: baseInterface[] = [
                 subTxt: {
                     locale: '명동',
                     time: '3시간 전',
-                    price: 3000
+                    price: 0,
+                    like: 11
                 }
             },
             {
@@ -86,7 +95,7 @@ const baseData: baseInterface[] = [
                 subTxt: {
                     locale: '종로',
                     time: '41분 전',
-                    price: 1420000
+                    price: 1420000,
                 }
             },
             {
@@ -95,7 +104,48 @@ const baseData: baseInterface[] = [
                 subTxt: {
                     locale: '회현',
                     time: '10시간 전',
-                    price: 500
+                    price: 500,
+                    like: 2
+                }
+            },
+            {
+                img: 'test',
+                title: '테스트4',
+                subTxt: {
+                    locale: '회현',
+                    time: '10시간 전',
+                    price: 500,
+                    like: 2
+                }
+            },
+            {
+                img: 'test',
+                title: '테스트4',
+                subTxt: {
+                    locale: '회현',
+                    time: '10시간 전',
+                    price: 500,
+                    like: 2
+                }
+            },
+            {
+                img: 'test',
+                title: '테스트4',
+                subTxt: {
+                    locale: '회현',
+                    time: '10시간 전',
+                    price: 500,
+                    like: 2
+                }
+            },
+            {
+                img: 'test',
+                title: '테스트4',
+                subTxt: {
+                    locale: '회현',
+                    time: '10시간 전',
+                    price: 500,
+                    like: 2
                 }
             },
 
@@ -108,19 +158,23 @@ const baseData: baseInterface[] = [
         header: ['profile','search','alarm'],
         categoryBtnType: 'round',
         categoryTxt: '주제',
-        category: [
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'part-timer',txt:'알바'},
-            {src:'home',txt:'부동산'},
-            {src:'car',txt:'중고차'},
-        ],
+        category: {
+            round: true,
+            cont: [
+                {src:'hamburger', all: true},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'part-timer',txt:'알바'},
+                {src:'home',txt:'부동산'},
+                {src:'car',txt:'중고차'},
+            ]
+        },
         content: []
     },
     {
@@ -145,19 +199,23 @@ const baseData: baseInterface[] = [
         header: ['setting'],
         categoryBtnType: 'round',
         categoryTxt: '전체',
-        category: [
-            {txt:'알바'},
-            {txt:'알바'},
-            {txt:'알바'},
-            {txt:'알바'},
-            {txt:'알바'},
-            {txt:'알바'},
-            {txt:'알바'},
-            {txt:'알바'},
-            {txt:'알바'},
-            {txt:'부동산'},
-            {txt:'중고차'},
-        ],
+        category: {
+            round: true,
+            big: true,
+            cont: [
+                {txt:'알바'},
+                {txt:'알바'},
+                {txt:'알바'},
+                {txt:'알바'},
+                {txt:'알바'},
+                {txt:'알바'},
+                {txt:'알바'},
+                {txt:'알바'},
+                {txt:'알바'},
+                {txt:'부동산'},
+                {txt:'중고차'},
+            ]
+        },
         content: []
     },
 ]

@@ -49,6 +49,7 @@ import { baseData } from '@/datas/datas'
   height: 7rem;
   margin: auto;
   border-top: 1px solid #eee;
+  background-color: #1d1f22;
   z-index: 999;
 
   .ui-navBottom-btn {

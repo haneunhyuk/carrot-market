@@ -33,7 +33,9 @@ watch(() => {
 <style lang="scss" >
 #app {
   height: 100%;
+  overflow: hidden;
   .container {
+    overflow-y: scroll;
     height: calc(100% - 7rem);
     padding-top: 4rem;
   }

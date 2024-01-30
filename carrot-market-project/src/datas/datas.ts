@@ -78,7 +78,7 @@ const baseData: baseInterface[] = [
                     price: 10000,
                 },
                 react: {
-                    like: 5
+                    like: 6
                 }
             },
             {
@@ -194,7 +194,10 @@ const baseData: baseInterface[] = [
         content: [
             {
                 more: false,
+                tag: ['인기'],
+                img: ['test01'],
                 title: '테스트1',
+                subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
                 subTxt: {
                     locale: '명동',
                     time: '11분 전',
@@ -207,7 +210,10 @@ const baseData: baseInterface[] = [
             },
             {
                 more: false,
+                tag: ['인기', '모임'],
+                img: ['test01','test03'],
                 title: '테스트2',
+                subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
                 subTxt: {
                     locale: '명동',
                     time: '3시간 전',
@@ -219,14 +225,20 @@ const baseData: baseInterface[] = [
             },
             {
                 more: false,
+                tag: ['인기'],
                 title: '테스트3',
                 subTxt: {
                     locale: '종로',
                     time: '41분 전',
+                },
+                react: {
+                    person: 6
                 }
             },
             {
                 more: false,
+                tag: ['동네질문'],
+                img: ['test01','test02','test03'],
                 title: '테스트4',
                 subTxt: {
                     locale: '회현',
@@ -239,6 +251,8 @@ const baseData: baseInterface[] = [
             },
             {
                 more: false,
+                tag: ['신규모임'],
+                img: ['test01','test02','test03'],
                 title: '테스트4',
                 subTxt: {
                     locale: '회현',
@@ -252,7 +266,10 @@ const baseData: baseInterface[] = [
             },
             {
                 more: false,
+                tag: ['인기','신규모임','생활정보','취미생활','해주세요'],
+                img: ['test01','test02','test03'],
                 title: '테스트4',
+                subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
                 subTxt: {
                     locale: '회현',
                     time: '10시간 전',
@@ -264,6 +281,8 @@ const baseData: baseInterface[] = [
             },
             {
                 more: false,
+                tag: ['인기','신규모임','생활정보','취미생활','해주세요'],
+                img: ['test01','test02','test03'],
                 title: '테스트4',
                 subTxt: {
                     locale: '회현',
@@ -276,6 +295,8 @@ const baseData: baseInterface[] = [
             },
             {
                 more: false,
+                tag: ['인기','신규모임','생활정보','취미생활','해주세요'],
+                img: ['test01','test02','test03'],
                 title: '테스트4',
                 subTxt: {
                     locale: '회현',

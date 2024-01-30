@@ -19,7 +19,7 @@ const selectList = (el: object) => {
 
 <template>
     <div class="popup toast">
-        <button type="button" class="btn-toast" @click="open = true">
+        <button type="button" class="btn-toast" @click="open = !open">
             {{ selected.title }}
             <span class="select-icon" :class="open?'flip':''">
                 <IconComponent src="ic_arrow" width="24px" height="24px" :cover="false"></IconComponent>

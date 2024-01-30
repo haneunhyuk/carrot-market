@@ -3,8 +3,10 @@ import { defineProps } from 'vue';
 const props = defineProps<{
     content: {
         more?: boolean
-        img?: string
+        img?: string | string[]
+        tag?: string[]
         title: string
+        subTitle?: string
         subTxt: {
             locale: string
             time: string
@@ -24,10 +26,22 @@ const props = defineProps<{
     <div class="content">
         <div v-if="content.img" class="img-wrap">
             <!-- <img :src="`@/images/img_${content.img}.png`"> -->
-            <img :src="require(`@/assets/images/img_${content.img}.png`)" >
+            <template v-if="typeof content.img == 'string'">
+                <img :src="require(`@/assets/images/img_${content.img}.png`)" >
+            </template>
+            <template v-else>
+                <span v-if="content.img.length > 1" class="cnt-img">{{ content.img.length }}</span>
+                <img v-for="img of content.img" :src="require(`@/assets/images/img_${img}.png`)" :key="img" >
+            </template>
         </div>
         <div class="content-wrap">
+            <ul v-if="content.tag" class="tags">
+                <li v-for="tag in content.tag" :key="tag" class="tag" :class="{'popular': tag=='인기'}">
+                    {{ tag }}
+                </li>
+            </ul>
             <h2 class="title">{{ content.title }}</h2>
+            <p class="subTitle">{{ content.subTitle }}</p>
             <div class="subTxt">
                 <template v-for="(item, key) of content.subTxt" :key="item">
                     <!-- <span v-if="key !== 'price'" :class="key">{{ item }}</span> -->
@@ -40,7 +54,7 @@ const props = defineProps<{
                 </template>
                 <!-- <span v-for="item in content.subTxt" :key="item">{{ item }}</span> -->
             </div>
-        </div>
+        </div>  
         <div class="react-wrap">
             <span v-for="(item, key) of content.react" class="react-icon" :class="key" :key="item">
                 <!-- <template v-if="key=='like'">{{ item }}</template> -->
@@ -67,8 +81,10 @@ const props = defineProps<{
     }
     .img-wrap {
         flex-shrink: 0;
-        width: 8rem;
-        height: 8rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 1rem;
+        overflow: hidden;
         img {
             display: block;
             width: 100%;
@@ -76,9 +92,39 @@ const props = defineProps<{
         }
     }
     &-wrap {
+        overflow: hidden;
         width: 100%;
+        .tags {
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0 0.5rem;
+            height: 1.8rem;
+            margin-bottom: 1rem;
+            .tag {
+                flex-shrink: 0;
+                padding: 0.2rem 0.5rem;
+                border-radius: 0.3rem;
+                background-color: #2a2929;
+                font-size: 1rem;
+                color: #ccc;
+                &.popular {
+                    background-color: rgb(99, 139, 233);
+                }
+            }
+        }
         .title {
             font-size: 1.6rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .subTitle {
+            font-size: 1.4rem;
+            color: #999;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
         }
         .subTxt {
             span {
@@ -144,6 +190,37 @@ const props = defineProps<{
             }
             & + .react-icon {
                 margin-left: 0.4rem;
+            }
+        }
+    }
+    &.life {
+        .img-wrap {
+            position: relative;
+            order: 1;
+            width: 8rem;
+            height: 8rem;
+            .cnt-img {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 0 0 0.5rem 0;
+                background-color: rgba(#000, 0.75);
+            }
+            img {
+                object-fit: cover;
+                & + img {
+                    display: none;
+                }
+            }
+            & + .content-wrap {
+                .subTxt {
+                    margin-top: 4rem;
+                }
             }
         }
     }

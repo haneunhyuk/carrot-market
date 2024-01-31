@@ -1,7 +1,7 @@
 <template>
-  <div class="filter-area">
-    <ul class="filter-list" :class="{'round-btn': data?.category.round, 'big': data?.category.big}">
-      <li v-for="category in data?.category.cont" :key="category.txt">
+  <div class="filter-area" :vertical="data?.vertical">
+    <ul class="filter-list" :class="{'round-btn': data?.round, 'big': data?.big}">
+      <li v-for="category in data?.cont" :key="category.txt">
         <button type="button" :class="{'all-btn': category.all}">
           <IconComponent v-if="category.all" :src="`ic_${category.src}`" width="18px" height="18px" :cover="false"><span class="all-btn-txt">전체</span></IconComponent>
           <IconComponent v-else-if="category.src" :src="`ic_${category.src}`" width="14px" height="14px" :cover="false"></IconComponent>
@@ -9,6 +9,15 @@
         </button>
       </li>
     </ul>
+    <!-- <ul class="filter-list" :class="{'round-btn': data?.category.round, 'big': data?.category.big}">
+      <li v-for="category in data?.category.cont" :key="category.txt">
+        <button type="button" :class="{'all-btn': category.all}">
+          <IconComponent v-if="category.all" :src="`ic_${category.src}`" width="18px" height="18px" :cover="false"><span class="all-btn-txt">전체</span></IconComponent>
+          <IconComponent v-else-if="category.src" :src="`ic_${category.src}`" width="14px" height="14px" :cover="false"></IconComponent>
+          <span class="category-txt">{{ category.txt }}</span>
+        </button>
+      </li>
+    </ul> -->
   </div>
 </template>
 
@@ -75,6 +84,34 @@ const props = defineProps({
       li {
         padding: 1.2rem 1.6rem;
         font-size: 1.6rem;
+      }
+    }
+  }
+  &[vertical=true] {
+    .filter-list {
+      align-items: baseline;
+      li {
+        justify-content: center;
+        width: 7rem;
+        height: 7rem;
+        padding: 0;
+        border: 0;
+        button {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem 0;
+          .category-txt {
+            display:-webkit-box;
+            -webkit-box-orient:vertical;
+            overflow:hidden;
+            -webkit-line-clamp:2;
+          }
+        }
+        .icon {
+          width: 3.6rem !important;
+          height: 3.6rem !important;
+          margin-right: 0;
+        }
       }
     }
   }

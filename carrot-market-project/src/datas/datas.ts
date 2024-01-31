@@ -18,13 +18,17 @@ export interface baseInterface {
     path: string,
     component: any,
     header: string[],
-    categoryBtnType? : string,
-    categoryTxt?: string,
     category?: {
+        vertical?: boolean,
         round?: boolean,
         big?: boolean,
         cont: Array<object>
-    },
+    } | {
+        vertical?: boolean,
+        round?: boolean,
+        big?: boolean,
+        cont: Array<object>
+    }[],
     content: any[]
 }
 
@@ -172,25 +176,59 @@ const baseData: baseInterface[] = [
         path: '/life',
         component: LifePage,
         header: ['profile','search','alarm'],
-        categoryBtnType: 'round',
-        categoryTxt: '주제',
-        category: {
-            round: true,
-            cont: [
-                {src:'hamburger', all: true},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'home',txt:'부동산'},
-                {src:'car',txt:'중고차'},
-            ]
-        },
+        category: [
+            {   
+                vertical: true,
+                round: true,
+                cont: [
+                    {src:'test', txt: '테스트1'},
+                    {src:'test', txt: '테스트2'},
+                    {src:'test', txt: '테스트3'},
+                    {src:'test', txt: '테스트4'},
+                    {src:'test', txt: '테스트5'},
+                    {src:'test', txt: '테스트6'},
+                    {src:'test', txt: '테스트7'},
+                    {src:'test', txt: '테스트8'},
+                    {src:'test', txt: '테스트9'},
+                    {src:'test', txt: '테스트10'},
+                    {src:'test', txt: '테스트11'},
+                ]
+            },
+            {
+                round: true,
+                cont: [
+                    {src:'hamburger', all: true},
+                    {src:'part-timer',txt:'알바'},
+                    {src:'part-timer',txt:'알바'},
+                    {src:'part-timer',txt:'알바'},
+                    {src:'part-timer',txt:'알바'},
+                    {src:'part-timer',txt:'알바'},
+                    {src:'part-timer',txt:'알바'},
+                    {src:'part-timer',txt:'알바'},
+                    {src:'part-timer',txt:'알바'},
+                    {src:'part-timer',txt:'알바'},
+                    {src:'home',txt:'부동산'},
+                    {src:'car',txt:'중고차'},
+                ]
+            },
+        ],
+        // category: {
+        //     round: true,
+        //     cont: [
+        //         {src:'hamburger', all: true},
+        //         {src:'part-timer',txt:'알바'},
+        //         {src:'part-timer',txt:'알바'},
+        //         {src:'part-timer',txt:'알바'},
+        //         {src:'part-timer',txt:'알바'},
+        //         {src:'part-timer',txt:'알바'},
+        //         {src:'part-timer',txt:'알바'},
+        //         {src:'part-timer',txt:'알바'},
+        //         {src:'part-timer',txt:'알바'},
+        //         {src:'part-timer',txt:'알바'},
+        //         {src:'home',txt:'부동산'},
+        //         {src:'car',txt:'중고차'},
+        //     ]
+        // },
         content: [
             {
                 more: false,
@@ -329,8 +367,6 @@ const baseData: baseInterface[] = [
         path: '/mypage',
         component: MyPage,
         header: ['setting'],
-        categoryBtnType: 'round',
-        categoryTxt: '전체',
         category: {
             round: true,
             big: true,

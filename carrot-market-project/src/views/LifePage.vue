@@ -1,6 +1,7 @@
 <template>
   <div>
-    <FilterComponont :data="activeData[0]"></FilterComponont>
+    <FilterComponont :data="activeData[0].category[0]"></FilterComponont>
+    <FilterComponont :data="activeData[0].category[1]"></FilterComponont>
     <ListContent  v-for="cont in activeData[0].content" :key="cont.title" :content="cont" :class="path"/>
   </div>
 </template>

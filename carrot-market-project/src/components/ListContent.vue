@@ -34,7 +34,7 @@ const props = defineProps<{
                 <img v-for="img of content.img" :src="require(`@/assets/images/img_${img}.png`)" :key="img" >
             </template>
         </div>
-        <div class="content-wrap">
+        <div class="content-wrap" :exist_more="content.more">
             <ul v-if="content.tag" class="tags">
                 <li v-for="tag in content.tag" :key="tag" class="tag" :class="{'popular': tag=='인기'}">
                     {{ tag }}
@@ -94,6 +94,9 @@ const props = defineProps<{
     &-wrap {
         overflow: hidden;
         width: 100%;
+        &:not([exist_more=false]) {
+            margin-right: 2rem;
+        }
         .tags {
             overflow: hidden;
             display: flex;

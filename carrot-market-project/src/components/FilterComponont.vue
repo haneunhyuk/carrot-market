@@ -3,11 +3,10 @@
       <div class="filter-list" :class="{'round-btn': data?.round, 'big': data?.big}">
           <swiper
               slidesPerView="auto"
-              :freeMode="true"
               >
               <swiper-slide v-for="category in data?.cont" :key="category.txt">
                   <button type="button" :class="{'all-btn': category.all}">
-                      <IconComponent v-if="category.all" :src="`ic_${category.src}`" width="14px" height="14px" :cover="false"><span class="all-btn-txt">{{wholeTxt}}</span></IconComponent>
+                      <IconComponent v-if="category.all" :src="`ic_${category.src}`" width="14px" height="14px" :cover="false"></IconComponent>
                       <IconComponent v-else-if="category.src" :src="`ic_${category.src}`" width="14px" height="14px" :cover="false"></IconComponent>
                       <span class="category-txt">{{ category.txt }}</span>
                   </button>
@@ -20,10 +19,6 @@
 import IconComponent from './IconComponent.vue';
 import { defineProps } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { FreeMode, Pagination } from 'swiper/modules';
-const onSwiper = (swiper) => {
-console.log(swiper);
-};
 
 const onSlideChange = () => {
 console.log('slide change');
@@ -62,6 +57,9 @@ margin: 1rem 0;
         }
         .icon {
           margin-right: 0;
+          & + span {
+            margin-left: 0.5rem;
+          }
         }
       }
     }

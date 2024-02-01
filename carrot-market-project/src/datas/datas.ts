@@ -18,7 +18,6 @@ export interface baseInterface {
     path: string,
     component: any,
     header: string[],
-    categoryTxt?:string,
     category?: {
         vertical?: boolean,
         round?: boolean,
@@ -58,7 +57,7 @@ const baseData: baseInterface[] = [
         header: ['search','alarm'],
         category: {
             cont: [
-                {src:'hamburger', all: true},
+                {src:'hamburger', all: true, txt:'전체'},
                 {src:'part-timer',txt:'알바'},
                 {src:'home',txt:'부동산'},
                 {src:'car',txt:'중고차'},
@@ -67,7 +66,7 @@ const baseData: baseInterface[] = [
         content: [
             {
                 more: false,
-                img: 'test',
+                img: ['test'],
                 title: '테스트1',
                 subTxt: {
                     locale: '명동',
@@ -79,7 +78,7 @@ const baseData: baseInterface[] = [
                 }
             },
             {
-                img: 'test',
+                img: ['test'],
                 title: '테스트2',
                 subTxt: {
                     locale: '명동',
@@ -91,7 +90,7 @@ const baseData: baseInterface[] = [
                 }
             },
             {
-                img: 'test',
+                img: ['test'],
                 title: '테스트3',
                 subTxt: {
                     locale: '종로',
@@ -102,7 +101,7 @@ const baseData: baseInterface[] = [
                 }
             },
             {
-                img: 'test',
+                img: ['test'],
                 title: '테스트4',
                 subTxt: {
                     locale: '회현',
@@ -114,7 +113,7 @@ const baseData: baseInterface[] = [
                 }
             },
             {
-                img: 'test',
+                img: ['test'],
                 title: '테스트4',
                 subTxt: {
                     locale: '회현',
@@ -126,7 +125,7 @@ const baseData: baseInterface[] = [
                 }
             },
             {
-                img: 'test',
+                img: ['test'],
                 title: '테스트4',
                 subTxt: {
                     locale: '회현',
@@ -138,7 +137,7 @@ const baseData: baseInterface[] = [
                 }
             },
             {
-                img: 'test',
+                img: ['test'],
                 title: '테스트4',
                 subTxt: {
                     locale: '회현',
@@ -150,7 +149,7 @@ const baseData: baseInterface[] = [
                 }
             },
             {
-                img: 'test',
+                img: ['test'],
                 title: '테스트4',
                 subTxt: {
                     locale: '회현',
@@ -173,23 +172,23 @@ const baseData: baseInterface[] = [
             {   
                 vertical: true,
                 cont: [
-                    {src:'test', txt: '테스트1'},
-                    {src:'test', txt: '테스트2'},
-                    {src:'test', txt: '테스트3'},
-                    {src:'test', txt: '테스트4'},
-                    {src:'test', txt: '테스트5'},
-                    {src:'test', txt: '테스트6'},
-                    {src:'test', txt: '테스트7'},
-                    {src:'test', txt: '테스트8'},
-                    {src:'test', txt: '테스트9'},
-                    {src:'test', txt: '테스트10'},
-                    {src:'test', txt: '테스트11'},
+                    {src:'test', txt: '모임1'},
+                    {src:'test', txt: '모임2'},
+                    {src:'test', txt: '모임3'},
+                    {src:'test', txt: '모임4'},
+                    {src:'test', txt: '모임5'},
+                    {src:'test', txt: '모임6'},
+                    {src:'test', txt: '모임7'},
+                    {src:'test', txt: '모임8'},
+                    {src:'test', txt: '모임9'},
+                    {src:'test', txt: '모임10'},
+                    {src:'test', txt: '모임11'},
                 ]
             },
             {
                 round: true,
                 cont: [
-                    {src:'hamburger', all: true},
+                    {src:'hamburger', txt: '주제', all: true},
                     {src:'part-timer',txt:'알바'},
                     {src:'part-timer',txt:'알바'},
                     {src:'part-timer',txt:'알바'},
@@ -204,23 +203,6 @@ const baseData: baseInterface[] = [
                 ]
             },
         ],
-        // category: {
-        //     round: true,
-        //     cont: [
-        //         {src:'hamburger', all: true},
-        //         {src:'part-timer',txt:'알바'},
-        //         {src:'part-timer',txt:'알바'},
-        //         {src:'part-timer',txt:'알바'},
-        //         {src:'part-timer',txt:'알바'},
-        //         {src:'part-timer',txt:'알바'},
-        //         {src:'part-timer',txt:'알바'},
-        //         {src:'part-timer',txt:'알바'},
-        //         {src:'part-timer',txt:'알바'},
-        //         {src:'part-timer',txt:'알바'},
-        //         {src:'home',txt:'부동산'},
-        //         {src:'car',txt:'중고차'},
-        //     ]
-        // },
         content: [
             {
                 more: false,
@@ -344,6 +326,30 @@ const baseData: baseInterface[] = [
         path: '/near',
         component: NearPage,
         header: ['search','alarm'],
+        category: {   
+            vertical: true,
+            cont: [
+                {src:'test', txt: '음식점'},
+                {src:'test', txt: '카페·디저트'},
+                {src:'test', txt: '운동'},
+                {src:'test', txt: '동네쿠폰'},
+                {src:'test', txt: '농수산물'},
+                {src:'test', txt: '이사·용달'},
+                {src:'test', txt: '수리'},
+                {src:'test', txt: '과외·클래스'},
+                {src:'test', txt: '뷰티샵'},
+                {src:'test', txt: '미용실'},
+                {src:'test', txt: '인테리어시공'},
+                {src:'test', txt: '더보기'},
+                {src:'test', txt: '청소'},
+                {src:'test', txt: '세탁소'},
+                {src:'test', txt: '취미'},
+                {src:'test', txt: '학원'},
+                {src:'test', txt: '육아'},
+                {src:'test', txt: '병원·약국'},
+                {src:'test', txt: '반려동물'},
+            ]
+        },
         content: []
     },
     {
@@ -358,7 +364,6 @@ const baseData: baseInterface[] = [
         path: '/mypage',
         component: MyPage,
         header: ['setting'],
-        categoryTxt:'전체',
         category: {
             round: true,
             big: true,

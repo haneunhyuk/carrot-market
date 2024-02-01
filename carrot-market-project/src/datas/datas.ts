@@ -29,7 +29,7 @@ export interface baseInterface {
         big?: boolean,
         cont: Array<object>
     }[],
-    content: any[]
+    content: any[] | object
 }
 
 const listsBottomSheet: listInterface = {
@@ -318,7 +318,6 @@ const baseData: baseInterface[] = [
                     thumb: 2
                 }
             },
-
         ]
     },
     {
@@ -340,7 +339,7 @@ const baseData: baseInterface[] = [
                 {src:'test', txt: '뷰티샵'},
                 {src:'test', txt: '미용실'},
                 {src:'test', txt: '인테리어시공'},
-                {src:'test', txt: '더보기'},
+                {src:'arrow', txt: '더보기'},
                 {src:'test', txt: '청소'},
                 {src:'test', txt: '세탁소'},
                 {src:'test', txt: '취미'},
@@ -350,7 +349,243 @@ const baseData: baseInterface[] = [
                 {src:'test', txt: '반려동물'},
             ]
         },
-        content: []
+        content: {
+            음식점: [
+                {
+                    tag: ['카페'],
+                    img: ['test01'],
+                    title: '테스트1',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 11분 전',
+                    },
+                },
+                {
+                    tag: ['카페'],
+                    img: ['test02'],
+                    title: '테스트2',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 3시간 전',
+                    },
+                },
+                {
+                    tag: ['일반음식점'],
+                    img: ['test03'],
+                    title: '테스트3',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '13일 전',
+                    },
+                },
+                {
+                    tag: ['일반음식점'],
+                    img: ['test02'],
+                    title: '테스트4',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 3분 전',
+                    },
+                },
+                {
+                    tag: ['카페'],
+                    img: ['test01'],
+                    title: '테스트5',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 2주 전',
+                    },
+                },
+            ],
+            생활: [
+                {
+                    tag: ['의류전문점'],
+                    img: ['test01'],
+                    title: '테스트1',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 11분 전',
+                    },
+                },
+                {
+                    tag: ['일반의류판매'],
+                    img: ['test02'],
+                    title: '테스트2',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 3시간 전',
+                    },
+                },
+                {
+                    tag: ['반려동물호텔'],
+                    img: ['test03'],
+                    title: '테스트3',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '13일 전',
+                    },
+                },
+                {
+                    tag: ['일반의류판매'],
+                    img: ['test02'],
+                    title: '테스트4',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 3분 전',
+                    },
+                },
+                {
+                    tag: ['여성의류전문점'],
+                    img: ['test01'],
+                    title: '테스트5',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 2주 전',
+                    },
+                },
+            ],
+            건강: [
+                {
+                    tag: ['필라테스'],
+                    img: ['test01'],
+                    title: '테스트1',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 11분 전',
+                    },
+                },
+                {
+                    tag: ['실내골프연습장'],
+                    img: ['test02'],
+                    title: '테스트2',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 3시간 전',
+                    },
+                },
+                {
+                    tag: ['헬스'],
+                    img: ['test03'],
+                    title: '테스트3',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '13일 전',
+                    },
+                },
+                {
+                    tag: ['필라테스'],
+                    img: ['test02'],
+                    title: '테스트4',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 3분 전',
+                    },
+                },
+                {
+                    tag: ['실내골프연습장'],
+                    img: ['test01'],
+                    title: '테스트5',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 2주 전',
+                    },
+                },
+            ],
+            미용: [
+                {
+                    tag: ['두피/탈모관리'],
+                    img: ['test01'],
+                    title: '테스트1',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 11분 전',
+                    },
+                },
+                {
+                    tag: ['미용'],
+                    img: ['test02'],
+                    title: '테스트2',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 3시간 전',
+                    },
+                },
+                {
+                    tag: ['미용실'],
+                    img: ['test03'],
+                    title: '테스트3',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '13일 전',
+                    },
+                },
+                {
+                    tag: ['두피관리'],
+                    img: ['test02'],
+                    title: '테스트4',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 3분 전',
+                    },
+                },
+                {
+                    tag: ['탈모관리'],
+                    img: ['test01'],
+                    title: '테스트5',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 2주 전',
+                    },
+                },
+            ],
+            교육: [
+                {
+                    tag: ['패션/뷰티클래스'],
+                    img: ['test01'],
+                    title: '테스트1',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 11분 전',
+                    },
+                },
+                {
+                    tag: ['보컬/성악레슨'],
+                    img: ['test02'],
+                    title: '테스트2',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 3시간 전',
+                    },
+                },
+                {
+                    tag: ['보컬/성악레슨'],
+                    img: ['test03'],
+                    title: '테스트3',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '13일 전',
+                    },
+                },
+                {
+                    tag: ['패션클래스'],
+                    img: ['test02'],
+                    title: '테스트4',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 3분 전',
+                    },
+                },
+                {
+                    tag: ['뷰티클래스'],
+                    img: ['test01'],
+                    title: '테스트5',
+                    subTitle: '테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트 테스트',
+                    subTxt: {
+                        time: '약 2주 전',
+                    },
+                },
+            ]
+        }
     },
     {
         title: '채팅',

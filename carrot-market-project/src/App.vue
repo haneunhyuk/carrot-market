@@ -6,7 +6,7 @@
     >
     </header-component>
     <div class="container">
-      <router-view :path="path"/>
+      <router-view :path="path" :class="path"/>
     </div>
     <bottom-nav></bottom-nav>
 </template>

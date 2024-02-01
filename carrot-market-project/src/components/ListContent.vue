@@ -3,7 +3,8 @@ import { defineProps } from 'vue';
 const props = defineProps<{
     content: {
         more?: boolean
-        img?: string | string[]
+        // img?: string | string[]
+        img?: string[]
         tag?: string[]
         title: string
         subTitle?: string
@@ -25,14 +26,8 @@ const props = defineProps<{
 <template>
     <div class="content">
         <div v-if="content.img" class="img-wrap">
-            <!-- <img :src="`@/images/img_${content.img}.png`"> -->
-            <template v-if="typeof content.img == 'string'">
-                <img :src="require(`@/assets/images/img_${content.img}.png`)" >
-            </template>
-            <template v-else>
-                <span v-if="content.img.length > 1" class="cnt-img">{{ content.img.length }}</span>
-                <img v-for="img of content.img" :src="require(`@/assets/images/img_${img}.png`)" :key="img" >
-            </template>
+            <span v-if="content.img.length > 1" class="cnt-img">{{ content.img.length }}</span>
+            <img v-for="img of content.img" :src="require(`@/assets/images/img_${img}.png`)" :key="img" >
         </div>
         <div class="content-wrap" :exist_more="content.more">
             <ul v-if="content.tag" class="tags">

@@ -14,6 +14,7 @@
         <IconComponent :src="`ic_arrow`" width="20px" height="20px" :cover="false"/>
       </button>
     </div>
+    <SwiperContent :title="'우리동네 업체 소식'" :data="activeData[0].content" isRightImg/>
     <SwiperContent :title="'우리동네 업체 소식'" :data="activeData[0].content" />
   </div>
 </template>

@@ -20,11 +20,12 @@ const props = defineProps<{
             comment?: number
         } 
     }
+    isRightImg:boolean
 }>()
 </script>
 
 <template>
-    <div class="content">
+    <div class="content" :isRight="isRightImg">
         <div v-if="content.img" class="img-wrap">
             <span v-if="content.img.length > 1" class="cnt-img">{{ content.img.length }}</span>
             <img v-for="img of content.img" :src="require(`@/assets/images/img_${img}.png`)" :key="img" >
@@ -68,6 +69,12 @@ const props = defineProps<{
     display: flex;
     gap: 0 1rem;
     padding: 1rem;
+
+    &[isright=true] {
+        .img-wrap {
+            order: 1;
+        }
+    }
     & + .content {
         border-top: 0.1rem solid #666;
     }
@@ -194,7 +201,6 @@ const props = defineProps<{
     &.life {
         .img-wrap {
             position: relative;
-            order: 1;
             width: 8rem;
             height: 8rem;
             .cnt-img {

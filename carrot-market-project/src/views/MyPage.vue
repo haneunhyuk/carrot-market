@@ -1,7 +1,6 @@
 <template>
   <div>
-    <FilterComponont :data="activeData[0]" :btn-type="activeData[0].categoryBtnType" :whole-txt="activeData[0].categoryTxt"></FilterComponont>
-    my
+    <FilterComponont :data="activeData[0].category" :btn-type="activeData[0].categoryBtnType" :whole-txt="activeData[0].categoryTxt"></FilterComponont>
   </div>
 </template>
 
@@ -9,7 +8,6 @@
 import FilterComponont from '@/components/FilterComponont.vue';
 import { baseData } from '@/datas/datas'
 import { ref, watch, defineProps } from 'vue';
-import { useRoute } from 'vue-router';
 
 const props = defineProps<{
   path: string

@@ -18,6 +18,7 @@ export interface baseInterface {
     path: string,
     component: any,
     header: string[],
+    categoryTxt?:string,
     category?: {
         vertical?: boolean,
         round?: boolean,
@@ -58,14 +59,6 @@ const baseData: baseInterface[] = [
         category: {
             cont: [
                 {src:'hamburger', all: true},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
-                {src:'part-timer',txt:'알바'},
                 {src:'part-timer',txt:'알바'},
                 {src:'home',txt:'부동산'},
                 {src:'car',txt:'중고차'},
@@ -179,7 +172,6 @@ const baseData: baseInterface[] = [
         category: [
             {   
                 vertical: true,
-                round: true,
                 cont: [
                     {src:'test', txt: '테스트1'},
                     {src:'test', txt: '테스트2'},
@@ -360,28 +352,25 @@ const baseData: baseInterface[] = [
         component: ChatPage,
         header: ['QRscan','alarm'],
         content: []
-
     },
     {
         title: '나의 당근',
         path: '/mypage',
         component: MyPage,
         header: ['setting'],
+        categoryTxt:'전체',
         category: {
             round: true,
             big: true,
             cont: [
-                {txt:'알바'},
-                {txt:'알바'},
-                {txt:'알바'},
-                {txt:'알바'},
-                {txt:'알바'},
-                {txt:'알바'},
-                {txt:'알바'},
-                {txt:'알바'},
-                {txt:'알바'},
-                {txt:'부동산'},
-                {txt:'중고차'},
+                {src:'hamburger', all: true},
+                {txt:'남성패션/잡화'},
+                {txt:'디지털기기'},
+                {txt:'취미/게임/음악'},
+                {txt:'모임'},
+                {txt:'여성잡화'},
+                {txt:'동네질문'},
+                {txt:'기타 중고물품'},
             ]
         },
         content: []

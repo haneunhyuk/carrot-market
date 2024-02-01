@@ -11,7 +11,6 @@ import FilterComponont from '@/components/FilterComponont.vue';
 import ListContent from '@/components/ListContent.vue';
 import { baseData } from '@/datas/datas'
 import { ref, watch, defineProps } from 'vue';
-import { useRoute } from 'vue-router';
 
 const props = defineProps<{
   path: string

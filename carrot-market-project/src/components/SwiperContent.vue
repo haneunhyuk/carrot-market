@@ -3,9 +3,9 @@
         <div class="title">{{title}}</div>
         <Swiper
             :module="[Pagination]"
-            :pagination="{
-            }"
-            @slide-move="console.log('swiper')"
+            :slides-per-view="1"
+            :pagination="true"
+            @slide-change="handleSwiper"
         >
             <SwiperSlide v-for="(cont, key) in data" :key="key">
                 <ListContent v-for="(c, key) in Array.from(cont)"  :key="key" :content="JSON.parse(JSON.stringify(c))" :is-right-img="isRightImg"/>
@@ -26,12 +26,19 @@ import IconComponent from './IconComponent.vue';
 import ListContent from './ListContent.vue';
 import 'swiper/css'
 import 'swiper/css/pagination'
+import { SwiperModule } from 'swiper/types';
 
 const props = defineProps<{
     title: string
     data: object
-    isRightImg: boolean
+    isRightImg?: boolean
 }>()
+
+const keys = Object.keys(props.data)
+
+const handleSwiper = (swiper: any) => {
+    console.log(keys[swiper.activeIndex])
+}
 </script>
 
 <style lang="scss" scoped>

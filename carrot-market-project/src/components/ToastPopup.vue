@@ -6,6 +6,7 @@ import IconComponent from './IconComponent.vue';
 const props = defineProps<{
             lists: toastInterface
     }>(),
+    emits = defineEmits(['chagne']),
     open = ref(false),
     selected = ref<any>()
 
@@ -13,6 +14,7 @@ const props = defineProps<{
 
 const selectList = (el: object) => {
     selected.value = el
+    emits('chagne', el)
     open.value = false
 }
 </script>

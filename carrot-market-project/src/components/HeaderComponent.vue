@@ -1,27 +1,20 @@
 <template>
-  <div class="header">
-    <div v-if="hasSelectBtn" class="header-tit select-location">
+  <div class="header" :isMyPage="path == 'mypage'">
+    <!-- <div v-if="hasSelectBtn" class="header-tit select-location">
       <ToastPopup :lists="listsToast" />
     </div>
     <div v-else class="header-tit">
       <button type="button">중구</button>
+    </div> -->
+    <div v-show="path != 'mypage'" class="header-tit select-location">
+      <templage v-if="path == 'chat'">
+        <div>{{ selectVal }}</div>
+      </templage>
+      <template v-else>
+        <ToastPopup :lists="listsToast" @chagne="(target) => selectVal = target.title"/>
+      </template>
     </div>
     <div class="icon-wrap">
-      <!-- <button type="button" v-show="props.path=='life'">
-        <IconComponent src="ic_profile" width="24px" height="24px" :cover="false" />
-      </button>
-      <button type="button" v-show="props.path=='' || props.path=='life' || props.path=='near'">
-        <IconComponent src="ic_search" width="24px" height="24px" :cover="false" />
-      </button>
-      <button type="button" v-show="props.path=='chat'">
-        <IconComponent src="ic_QRscan" width="24px" height="24px" :cover="false" />
-      </button>
-      <button type="button" v-show="props.path !== 'mypage'">
-        <IconComponent src="ic_alarm" width="24px" height="24px" :cover="false" />
-      </button>
-      <button type="button" v-show="props.path=='mypage'">
-        <IconComponent src="ic_setting" width="24px" height="24px" :cover="false" />
-      </button> -->
       <button v-for="icon in activeData[0].header" :key="icon" type="button">
         <IconComponent :src="`ic_${icon}`" width="24px" height="24px" :cover="false" />
       </button>
@@ -42,7 +35,8 @@ const props = defineProps({
 })
 
 const active = ref(false),
-      activeData = ref()
+      activeData = ref(),
+      selectVal = ref(listsToast.location.filter((list: any) => list.select)[0].title)
 
 watch(() => {
   activeData.value = baseData.filter((data: any) => data.path.replace('/','') == props.path)
@@ -66,6 +60,9 @@ const ToggleSelect = () => active.value = !active.value;
   padding: 0 1.5rem;
   background-color: #1d1f22;
   z-index: 10;
+  &[isMyPage=true] {
+    justify-content: flex-end;
+  }
   .header-tit {
     button {
       font-size: 2rem;

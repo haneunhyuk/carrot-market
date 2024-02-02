@@ -24,10 +24,18 @@ const onSlideChange = () => {
 console.log('slide change');
 };
 
-const props = defineProps({
-data: Array,
-wholeTxt: String
-})
+const props = defineProps<{
+  data: {
+    vertical?: boolean
+    round?: boolean
+    big?: boolean
+    cont: {
+      src?: string
+      txt?: string
+      all?: boolean
+    }[]
+  },
+}>()
 </script>
 
 <style lang="scss" scoped>

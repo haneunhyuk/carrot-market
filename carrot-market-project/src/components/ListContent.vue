@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
+import { useRoute } from 'vue-router';
 const props = defineProps<{
     content: {
         more?: boolean
@@ -20,8 +21,9 @@ const props = defineProps<{
             comment?: number
         } 
     }
-    isRightImg:boolean
+    isRightImg?:boolean
 }>()
+const path = useRoute().path.split('/')[1]
 </script>
 
 <template>
@@ -31,12 +33,19 @@ const props = defineProps<{
             <img v-for="img of content.img" :src="require(`@/assets/images/img_${img}.png`)" :key="img" >
         </div>
         <div class="content-wrap" :exist_more="content.more">
-            <ul v-if="content.tag" class="tags">
+            <ul v-if="path != 'near' && content.tag" class="tags">
                 <li v-for="tag in content.tag" :key="tag" class="tag" :class="{'popular': tag=='인기'}">
                     {{ tag }}
                 </li>
             </ul>
-            <h2 class="title">{{ content.title }}</h2>
+            <div>
+                <h2 class="title">{{ content.title }}</h2>
+                <ul v-if="path == 'near' && content.tag" class="tags">
+                    <li v-for="tag in content.tag" :key="tag" class="tag" :class="{'popular': tag=='인기'}">
+                        {{ tag }}
+                    </li>
+                </ul>
+            </div>
             <p class="subTitle">{{ content.subTitle }}</p>
             <div class="subTxt">
                 <template v-for="(item, key) of content.subTxt" :key="item">
@@ -57,7 +66,7 @@ const props = defineProps<{
                 {{ item }}
             </span>
         </div>
-        <button v-if="content.more != false" class="more">
+        <button v-if="content.more !== undefined" class="more">
             <span class="sr-only">더보기</span>
         </button>
     </div>

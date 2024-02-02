@@ -5,9 +5,10 @@
             :module="[Pagination]"
             :pagination="{
             }"
+            @slide-move="console.log('swiper')"
         >
             <SwiperSlide v-for="(cont, key) in data" :key="key">
-                <ListContent v-for="(c, key) in Array.from(cont)"  :key="key" :content="c" :is-right-img="isRightImg"/>
+                <ListContent v-for="(c, key) in Array.from(cont)"  :key="key" :content="JSON.parse(JSON.stringify(c))" :is-right-img="isRightImg"/>
             </SwiperSlide>
         </Swiper>
         <button type="button">
